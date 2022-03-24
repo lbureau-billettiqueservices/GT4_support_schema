@@ -4,6 +4,20 @@ This repository contains the json-schema describing the format of ticketing supp
 
 The schemas are available in the `schema` repository, with `schema\ticketing_support_schema.json` being the root schema.
 
+== Using this repository
+
+The schema is the single file `schema/ticketing_support_schema.json`. Use it with your favorite tool, or integrate
+it directly in your tools.
+
+NOTE: it could be interesting to host the schema file somewhere, which would allow users to retrieve it properly.
+
+=== Quickly checking the validity of a json dump
+
+There is a python script in `tools` called `validate.py` that will check any json dump file against the current schema.
+
+- Run it directly with `python validate.py path/to/file.json` (same requirements as tests)
+- or through https://earthly.dev/[earthly] using `earthly +validate --file path/to/file.json`
+
 == Running tests
 
 === Using Docker and Earthly
@@ -15,6 +29,7 @@ Any machine with docker and https://earthly.dev/[earthly] installed can run the 
 ==== Requirements
 
 - Python 3.8+
+- Python packages `pytest` and `jsonschema`
 
 ==== Running the tests
 
@@ -42,7 +57,7 @@ Test files are themselves json files with the current schema:
     },
     "input": {
       "type": "string",
-      "description": "name of the input file used in the test, found in 'tests/data/input'. ie: calypso_support.json"
+      "description": "name of the input file used in the test, found in 'tests/data/input'. ie: calypso_support_minimal.json"
     },
     "expected": {
       "type": "object",

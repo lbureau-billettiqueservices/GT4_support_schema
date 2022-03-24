@@ -4,15 +4,118 @@
   "description": "This schema describes the accepted format of ticketing supports dumps defined by the CN03/GT4 group.",
   "type": "object",
   "properties": {
-    "dump_informations": {
+    "information": {
       "$ref": "#/definitions/dump_information"
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "CalypsoPO"
+      ]
+    },
+    "data": {
+      "type": "object"
     }
   },
+  "oneOf": [
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "CalypsoPO"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "$ref": "#/definitions/CalypsoPO"
+          }
+        }
+      }
+    }
+  ],
   "definitions": {
+    "hex_string": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-fA-F]{2})+$"
+    },
+    "EF": {
+      "type": "object",
+      "required": [
+        "FCP"
+      ],
+      "properties": {
+        "FCP": {
+          "$ref": "#/definitions/hex_string"
+        },
+        "records": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-fA-F0-9]{2}$": {
+              "$ref": "#/definitions/hex_string"
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false
+        }
+      }
+    },
+    "DF": {
+      "type": "object",
+      "required": [
+        "FCP"
+      ],
+      "properties": {
+        "FCP": {
+          "$ref": "#/definitions/hex_string"
+        },
+        "EFs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/EF"
+          }
+        }
+      }
+    },
+    "CalypsoContainers": {
+      "type": "object",
+      "properties": {
+        "AID": {
+          "$ref": "#/definitions/hex_string"
+        },
+        "CSN": {
+          "$ref": "#/definitions/hex_string"
+        },
+        "FCI": {
+          "$ref": "#/definitions/hex_string"
+        },
+        "DF": {
+          "$ref": "#/definitions/DF"
+        }
+      },
+      "required": [
+        "FCI",
+        "DF"
+      ]
+    },
+    "CalypsoPO": {
+      "type": "object",
+      "properties": {
+        "containers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/CalypsoContainers"
+          }
+        }
+      }
+    },
     "dump_information": {
       "type": "object",
       "properties": {
-        "version": {
+        "schema_version": {
           "title": "Version of the schema for this dump",
           "type": "string",
           "pattern": "^(([0-9]+)\\.([0-9]+))$"
@@ -30,7 +133,16 @@
           "title": "Mode of communication used to dump the support (contact/contactless, protocol..)",
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "schema_version",
+        "done_at",
+        "mode"
+      ]
     }
-  }
+  },
+  "required": [
+    "information",
+    "data"
+  ]
 }

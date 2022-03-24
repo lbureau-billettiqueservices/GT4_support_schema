@@ -3,5 +3,5 @@
     "result": "ok"
   },
   "schema": "",
-  "input": "calypso_support.json"
+  "input": "calypso_support_minimal.json"
 }
