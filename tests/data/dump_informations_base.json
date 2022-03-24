@@ -1,7 +1,0 @@
-{
-  "expected": {
-    "result": "ok"
-  },
-  "schema": "dump_informations_schema.json",
-  "input": "dump_informations.json"
-}

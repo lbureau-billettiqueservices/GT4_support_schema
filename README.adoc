@@ -1,0 +1,64 @@
+= Ticketing support dump schema
+
+This repository contains the json-schema describing the format of ticketing support dump defined in the CN03/GT4 group.
+
+The schemas are available in the `schema` repository, with `schema\ticketing_support_schema.json` being the root schema.
+
+== Running tests
+
+=== Using Docker and Earthly
+
+Any machine with docker and https://earthly.dev/[earthly] installed can run the test suite with `earthly +test` easily.
+
+=== Manually
+
+==== Requirements
+
+- Python 3.8+
+
+==== Running the tests
+
+[source, bash]
+-----
+pip install pytest jsonschema
+cd tests
+pytest schema_tester.py
+-----
+
+== Writing new tests
+
+Test files are themselves json files with the current schema:
+
+[source, json]
+----
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "test",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "string",
+      "description": "name of the subschema detailed in the definitions of the root schema. Empty if the root schema should be used"
+    },
+    "input": {
+      "type": "string",
+      "description": "name of the input file used in the test, found in 'tests/data/input'. ie: calypso_support.json"
+    },
+    "expected": {
+      "type": "object",
+      "description": "the expected result of the test",
+      "properties": {
+        "result": {
+          "type": "string",
+          "description": "The result code of the test. 'ok' if the input is validated by the schema. 'failure' otherwise.",
+          "enum": ["ok", "failure"]
+        },
+        "error_message": {
+          "type": "string",
+          "description": "The error message when the test checks for a failed validation. This is useful to verify that a rule is properly enforced, and only present when the test checks for a failed validation"
+        }
+      }
+    }
+  }
+}
+----

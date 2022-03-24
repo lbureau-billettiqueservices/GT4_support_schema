@@ -2,7 +2,8 @@
 Schema tester file
 """
 import pytest
-import jsonschema
+from jsonschema import validate, Draft7Validator
+from jsonschema.exceptions import ValidationError
 
 
 def test_file(test_context):
@@ -10,9 +11,13 @@ def test_file(test_context):
     json_data = test_context["json_data"]
     expected = test_context["expected"]
     schema = test_context["schema"]
+
+    Draft7Validator.check_schema(schema)
+    validator = Draft7Validator(schema)
+
     if expected["result"] == "ok":
-        jsonschema.validate(json_data, schema)
+        validate(json_data, schema)
     else:
-        with pytest.raises(jsonschema.exceptions.ValidationError) as excinfo:
-            jsonschema.validate(json_data, schema)
+        with pytest.raises(ValidationError) as excinfo:
+            validate(json_data, schema)
         assert expected["error_message"] in str(excinfo.value)

@@ -1,0 +1,7 @@
+{
+  "expected": {
+    "result": "ok"
+  },
+  "schema": "dump_information",
+  "input": "dump_information.json"
+}

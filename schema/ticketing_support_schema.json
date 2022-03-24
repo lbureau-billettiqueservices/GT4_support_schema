@@ -1,12 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "ticketing_support.json",
   "title": "Ticketing support dump schema",
   "description": "This schema describes the accepted format of ticketing supports dumps defined by the CN03/GT4 group.",
   "type": "object",
   "properties": {
     "dump_informations": {
-
+      "$ref": "#/definitions/dump_information"
+    }
+  },
+  "definitions": {
+    "dump_information": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "title": "Version of the schema for this dump",
+          "type": "string",
+          "pattern": "^(([0-9]+)\\.([0-9]+))$"
+        },
+        "done_at": {
+          "title": "Date when the support was dumped",
+          "type": "string",
+          "format": "date-time"
+        },
+        "comments": {
+          "title": "Free comments",
+          "type": "string"
+        },
+        "mode": {
+          "title": "Mode of communication used to dump the support (contact/contactless, protocol..)",
+          "type": "string"
+        }
+      }
     }
   }
 }
