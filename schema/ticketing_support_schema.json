@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ticketing_support.json",
+  "title": "Ticketing support dump schema",
+  "description": "This schema describes the accepted format of ticketing supports dumps defined by the CN03/GT4 group.",
+  "type": "object",
+  "properties": {
+    "dump_informations": {
+
+    }
+  }
+}
