@@ -13,7 +13,6 @@ def test_file(test_context):
     schema = test_context["schema"]
 
     Draft7Validator.check_schema(schema)
-    validator = Draft7Validator(schema)
 
     if expected["result"] == "ok":
         validate(json_data, schema)
