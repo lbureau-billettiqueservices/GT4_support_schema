@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../schema/ticketing_support_schema.json",
+  "technicalData": {
+    "dumpInfo": {
+      "date": "2022-03-24T11:55:11.924303+01:0",
+      "schemaVersion": "1.0"
+    },
+    "family": "CalypsoPO"
+  },
+  "dumpData": {
+    "containers": [
+      {
+        "fci": "6F24840AA0000004040125092101A516BF0C13C7080000000079CCE8A453070C3E1322150101",
+        "fcp": "85170002000000101000000103000000424242212730002000"
+      }
+    ]
+  }
+}

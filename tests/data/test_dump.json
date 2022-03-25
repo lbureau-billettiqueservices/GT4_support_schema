@@ -1,0 +1,9 @@
+[
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "",
+    "input": "demo_minimal.json"
+  }
+]

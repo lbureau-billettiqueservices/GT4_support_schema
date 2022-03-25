@@ -41,8 +41,6 @@ def pytest_generate_tests(metafunc):
     test_list = []
     test_ids = []
 
-    schema_abs_path = os.path.abspath(SCHEMA_PATH)
-
     for f in test_files:
         test_data = get_test_data(f)
         for test in test_data:
@@ -50,10 +48,10 @@ def pytest_generate_tests(metafunc):
             schema = get_schema(test["schema"])
 
             test_list.append(
-                {"filename": f, "json_data": dump, "schema": schema, "expected": test["expected"]}
+                {"json_data": dump, "schema": schema, "expected": test["expected"]}
             )
 
-            test_ids.append(f)
+            test_ids.append(test['input'])
 
     if "test_context" in metafunc.fixturenames:
         metafunc.parametrize("test_context", test_list, ids=test_ids)
