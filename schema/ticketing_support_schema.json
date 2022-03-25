@@ -4,14 +4,23 @@
   "description": "This schema describes the accepted format of ticketing supports dumps defined by the CN03/GT4 group.",
   "type": "object",
   "properties": {
-    "information": {
-      "$ref": "#/definitions/dump_information"
-    },
-    "family": {
-      "type": "string",
-      "enum": [
-        "CalypsoPO"
-      ]
+    "technicalData": {
+      "type": "object",
+      "properties": {
+        "dumpInfo": {
+          "$ref": "#/definitions/dumpInfo"
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "CalypsoPO"
+          ]
+        },
+        "communication": {
+          "$ref": "#/definitions/communication"
+        }
+      },
+      "required": ["dumpInfo", "family"]
     },
     "data": {
       "type": "object"
@@ -112,15 +121,15 @@
         }
       }
     },
-    "dump_information": {
+    "dumpInfo": {
       "type": "object",
       "properties": {
-        "schema_version": {
+        "schemaVersion": {
           "title": "Version of the schema for this dump",
           "type": "string",
           "pattern": "^(([0-9]+)\\.([0-9]+))$"
         },
-        "done_at": {
+        "dumpDate": {
           "title": "Date when the support was dumped",
           "type": "string",
           "format": "date-time"
@@ -128,17 +137,50 @@
         "comments": {
           "title": "Free comments",
           "type": "string"
-        },
-        "mode": {
-          "title": "Mode of communication used to dump the support (contact/contactless, protocol..)",
-          "type": "string"
         }
       },
       "required": [
-        "schema_version",
-        "done_at",
-        "mode"
+        "schemaVersion",
+        "dumpDate"
       ]
+    },
+    "communication" : {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["contactLess", "contact"]
+        }
+      },
+      "if": {
+        "properties": {
+          "mode" : {
+            "const": "contactLess"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "protocol": {
+            "type": "string",
+            "enum": ["ISO_A", "ISO_B", "BPrime"]
+          },
+          "ATQ": {
+            "$ref": "#/definitions/hex_string"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "protocol": {
+            "type": "string",
+            "enum": ["T=0", "T=1", "HSP"]
+          },
+          "ATR": {
+            "$ref": "#/definitions/hex_string"
+          }
+        }
+      }
     }
   },
   "required": [

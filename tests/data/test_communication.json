@@ -1,0 +1,24 @@
+[
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "communication",
+    "input": "communication_contactless_OK.json"
+  },
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "communication",
+    "input": "communication_contact_OK.json"
+  },
+  {
+    "expected": {
+      "result": "failure",
+      "error_message": "'T=0' is not one of ['ISO_A', 'ISO_B', 'BPrime']"
+    },
+    "schema": "communication",
+    "input": "communication_contactless_KO_wrong_protocol.json"
+  }
+]

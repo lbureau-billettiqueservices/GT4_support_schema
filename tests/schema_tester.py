@@ -28,5 +28,5 @@ def test_file(test_context):
         validate(json_data, schema, resolver=resolver)
     else:
         with pytest.raises(ValidationError) as excinfo:
-            validate(json_data, schema)
+            validate(json_data, schema, resolver=resolver)
         assert expected["error_message"] in str(excinfo.value)

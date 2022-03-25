@@ -1,7 +1,9 @@
-{
-  "expected": {
-    "result": "ok"
-  },
-  "schema": "CalypsoPO",
-  "input": "calypsoPO.json"
-}
+[
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "CalypsoPO",
+    "input": "calypsoPO.json"
+  }
+]
