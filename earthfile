@@ -17,9 +17,9 @@ test:
     RUN pytest schema_tester.py
 
 validate:
-    ARG --required file
     FROM +base-python
     COPY --dir schema .
-    COPY tools/validate.py tools/validate.py
+    COPY quick_validate.py quick_validate.py
+    ARG --required file
     COPY $file dump.json
-    RUN python3 tools/validate.py dump.json
+    RUN python3 quick_validate.py dump.json

@@ -4,7 +4,7 @@ from jsonschema import validate
 
 import os
 
-schema_path = os.path.join(os.path.dirname(__file__), '../schema/ticketing_support_schema.json')
+schema_path = os.path.join(os.path.dirname(__file__), 'schema/ticketing_support_schema.json')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='validate the file passed as parameter against the schema')

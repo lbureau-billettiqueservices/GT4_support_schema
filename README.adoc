@@ -17,9 +17,9 @@ WARNING: This schema is based on json-schema draft 07, so be sure to pick an imp
 
 === Quickly checking the validity of a json dump
 
-There is a python script in `tools` called `validate.py` that will check any json dump file against the current schema.
+There is a python script called `quick_validate.py` that will check any json dump file against the current schema.
 
-- Run it directly with `python validate.py path/to/file.json` (same requirements as tests)
+- Run it directly with `python quick_validate.py path/to/file.json` (same requirements as tests)
 - or through https://earthly.dev/[earthly] using `earthly +validate --file path/to/file.json`
 
 == Running tests
