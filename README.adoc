@@ -11,6 +11,10 @@ it directly in your tools.
 
 NOTE: it could be interesting to host the schema file somewhere, which would allow users to retrieve it properly.
 
+The official json-schema website has a list of https://json-schema.org/implementations.html#validators[validator implementations] for different programming languages. Pick your poison.
+
+WARNING: This schema is based on json-schema draft 07, so be sure to pick an implementation that can use this draft.
+
 === Quickly checking the validity of a json dump
 
 There is a python script in `tools` called `validate.py` that will check any json dump file against the current schema.
