@@ -58,39 +58,39 @@
       "required": [
         "FCP"
       ],
-      "properties": {
-        "FCP": {
-          "$ref": "#/definitions/hex_string"
-        },
-        "records": {
+      "oneOf": [
+        {
           "type": "object",
-          "patternProperties": {
-            "^[a-fA-F0-9]{2}$": {
+          "properties": {
+            "records": {
+              "type": "object",
+              "patternProperties": {
+                "^[a-fA-F0-9]{2}$": {
+                  "$ref": "#/definitions/hex_string"
+                }
+              },
+              "minProperties": 1,
+              "additionalProperties": false
+            },
+            "FCP": {
               "$ref": "#/definitions/hex_string"
             }
           },
-          "minProperties": 1,
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "binData": {
+              "$ref": "#/definitions/hex_string"
+            },
+            "FCP": {
+              "$ref": "#/definitions/hex_string"
+            }
+          },
           "additionalProperties": false
         }
-      }
-    },
-    "DF": {
-      "type": "object",
-      "required": [
-        "fcp"
-      ],
-      "properties": {
-        "fcp": {
-          "$ref": "#/definitions/FCP"
-        },
-        "efs": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/definitions/EF"
-          }
-        }
-      }
+      ]
     },
     "FCI": {
       "type": "string",

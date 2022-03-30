@@ -1,0 +1,32 @@
+[
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "EF",
+    "input": "EF_bindata_OK.json"
+  },
+  {
+    "expected": {
+      "result": "ok"
+    },
+    "schema": "EF",
+    "input": "EF_records_OK.json"
+  },
+  {
+    "expected": {
+      "result": "failure",
+      "error_message": "'not a record id' does not match any of the regexes: '^[a-fA-F0-9]{2}$'"
+    },
+    "schema": "EF",
+    "input": "EF_records_KO_wrong_record_name.json"
+  },
+  {
+    "expected": {
+      "result": "failure",
+      "error_message": "Additional properties are not allowed ('binData' was unexpected)"
+    },
+    "schema": "EF",
+    "input": "EF_KO_records_and_bindata.json"
+  }
+]
