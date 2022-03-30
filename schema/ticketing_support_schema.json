@@ -162,6 +162,9 @@
         "mode": {
           "type": "string",
           "enum": ["contactLess", "contact"]
+        },
+        "ATQ/ATR": {
+          "$ref": "#/definitions/hex_string"
         }
       },
       "if": {
@@ -176,9 +179,6 @@
           "protocol": {
             "type": "string",
             "enum": ["ISO_A", "ISO_B", "BPrime"]
-          },
-          "ATQ": {
-            "$ref": "#/definitions/hex_string"
           }
         }
       },
@@ -187,9 +187,6 @@
           "protocol": {
             "type": "string",
             "enum": ["T=0", "T=1", "HSP"]
-          },
-          "ATR": {
-            "$ref": "#/definitions/hex_string"
           }
         }
       }
