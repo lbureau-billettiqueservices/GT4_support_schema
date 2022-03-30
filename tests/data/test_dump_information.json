@@ -1,9 +1,12 @@
-[
-  {
-    "expected": {
-      "result": "ok"
-    },
-    "schema": "dumpInfo",
-    "input": "dump_information.json"
-  }
-]
+{
+  "$schema": "../test_schema.json",
+  "tests": [
+    {
+      "expected": {
+        "result": "ok"
+      },
+      "schema": "dumpInfo",
+      "input": "dump_information.json"
+    }
+  ]
+}

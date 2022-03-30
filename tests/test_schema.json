@@ -1,29 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "test",
-  "type": "array",
-  "items": {
-    "properties": {
-      "schema": {
-        "type": "string",
-          "description": "name of the subschema detailed in the definitions of the root schema. Empty if the root schema should be used"
-        },
-      "input": {
-        "type": "string",
-        "description": "name of the input file used in the test, found in 'tests/data/input'. ie: calypso_support_minimal.json"
-      },
-      "expected": {
-        "type": "object",
-        "description": "the expected result of the test",
+  "type": "object",
+  "properties": {
+    "tests": {
+      "type": "array",
+      "items": {
         "properties": {
-          "result": {
+          "schema": {
             "type": "string",
-            "description": "The result code of the test. 'ok' if the input is validated by the schema. 'failure' otherwise.",
-            "enum": ["ok", "failure"]
+            "description": "name of the subschema detailed in the definitions of the root schema. Empty if the root schema should be used"
           },
-          "error_message": {
+          "input": {
             "type": "string",
-            "description": "The error message when the test checks for a failed validation. This is useful to verify that a rule is properly enforced, and only present when the test checks for a failed validation"
+            "description": "name of the input file used in the test, found in 'tests/data/input'. ie: calypso_support_minimal.json"
+          },
+          "expected": {
+            "type": "object",
+            "description": "the expected result of the test",
+            "properties": {
+              "result": {
+                "type": "string",
+                "description": "The result code of the test. 'ok' if the input is validated by the schema. 'failure' otherwise.",
+                "enum": [
+                  "ok",
+                  "failure"
+                ]
+              },
+              "error_message": {
+                "type": "string",
+                "description": "The error message when the test checks for a failed validation. This is useful to verify that a rule is properly enforced, and only present when the test checks for a failed validation"
+              }
+            }
           }
         }
       }

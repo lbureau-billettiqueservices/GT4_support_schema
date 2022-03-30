@@ -43,6 +43,7 @@ def pytest_generate_tests(metafunc):
 
     for f in test_files:
         test_data = get_test_data(f)
+        test_data = test_data["tests"]
         for test in test_data:
             dump = get_dump(test['input'])
             schema = get_schema(test["schema"])
