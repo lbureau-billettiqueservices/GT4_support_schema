@@ -26,7 +26,7 @@
     {
       "expected": {
         "result": "failure",
-        "error_message": "Failed validating 'not' in schema[0]:\n    {'not': {'required': ['binData']},"
+        "error_message": "Failed validating 'not' in schema[0]:\n    {'not': {'required': ['bin_data']},"
       },
       "schema": "EF",
       "input": "EF_KO_records_and_bindata.json"

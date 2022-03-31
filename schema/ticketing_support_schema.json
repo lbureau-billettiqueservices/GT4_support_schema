@@ -78,11 +78,11 @@
           "$ref": "#/definitions/EF_with_records"
         },
         {
-          "$ref": "#/definitions/EF_binData"
+          "$ref": "#/definitions/EF_bin_data"
         }
       ]
     },
-    "EF_binData": {
+    "EF_bin_data": {
       "type": "object",
       "required": [
         "FCP"
@@ -91,7 +91,7 @@
         "FCP": {
           "$ref": "#/definitions/hex_string"
         },
-        "binData": {
+        "bin_data": {
           "$ref": "#/definitions/hex_string"
         }
       },
@@ -120,7 +120,7 @@
         }
       },
       "not": {
-        "required": ["binData"]
+        "required": ["bin_data"]
       }
     },
     "FCI": {
