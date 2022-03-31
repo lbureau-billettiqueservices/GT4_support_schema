@@ -53,6 +53,10 @@
       "type": "string",
       "pattern": "^(?:[0-9a-fA-F]{2})+$"
     },
+    "byte": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{2}$"
+    },
     "EF": {
       "type": "object",
       "required": [
@@ -98,7 +102,7 @@
     },
     "FCP": {
       "type": "string",
-      "pattern": "^85(?:[0-9a-fA-F]{2})+$"
+      "pattern": "^8517(?:[0-9a-fA-F]{2})+$"
     },
     "CalypsoContainers": {
       "type": "object",
@@ -114,6 +118,27 @@
         },
         "fcp": {
           "$ref": "#/definitions/FCP"
+        },
+        "session_modifications": {
+          "$ref": "#/definitions/byte"
+        },
+        "platform":{
+          "$ref": "#/definitions/byte"
+        },
+        "app_type": {
+          "$ref": "#/definitions/byte"
+        },
+        "app_subtype":{
+          "$ref": "#/definitions/byte"
+        },
+        "issuer": {
+          "$ref": "#/definitions/byte"
+        },
+        "version":{
+          "$ref": "#/definitions/byte"
+        },
+        "revision": {
+          "$ref": "#/definitions/byte"
         }
       },
       "required": [
