@@ -41,7 +41,7 @@
       },
       "then": {
         "properties": {
-          "dumpData": {
+          "dump_data": {
             "$ref": "#/definitions/CalypsoPO"
           }
         }
@@ -261,6 +261,6 @@
   },
   "required": [
     "technicalData",
-    "dumpData"
+    "dump_data"
   ]
 }
