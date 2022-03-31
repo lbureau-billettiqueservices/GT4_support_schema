@@ -26,7 +26,7 @@
     {
       "expected": {
         "result": "failure",
-        "error_message": "Additional properties are not allowed ('binData' was unexpected)"
+        "error_message": "Failed validating 'not' in schema[0]:"
       },
       "schema": "EF",
       "input": "EF_KO_records_and_bindata.json"
