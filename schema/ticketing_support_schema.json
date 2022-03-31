@@ -49,6 +49,14 @@
     }
   ],
   "definitions": {
+    "two_bytes": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{4}$"
+    },
+    "four_bytes": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}$"
+    },
     "hex_string": {
       "type": "string",
       "pattern": "^(?:[0-9a-fA-F]{2})+$"
@@ -102,7 +110,7 @@
     },
     "FCP": {
       "type": "string",
-      "pattern": "^8517(?:[0-9a-fA-F]{2})+$"
+      "pattern": "^8517([0-9a-fA-F]){46}$"
     },
     "CalypsoContainers": {
       "type": "object",
@@ -139,6 +147,21 @@
         },
         "revision": {
           "$ref": "#/definitions/byte"
+        },
+        "status": {
+          "$ref": "#/definitions/byte"
+        },
+        "type": {
+          "$ref": "#/definitions/byte"
+        },
+        "access_conditions": {
+          "$ref": "#/definitions/four_bytes"
+        },
+        "key_indexes":{
+          "$ref": "#/definitions/four_bytes"
+        },
+        "lid": {
+          "$ref": "#/definitions/two_bytes"
         }
       },
       "required": [
