@@ -203,7 +203,7 @@
     "dump_info": {
       "type": "object",
       "properties": {
-        "schemaVersion": {
+        "schema_version": {
           "title": "Version of the schema for this dump",
           "type": "string",
           "pattern": "^(([0-9]+)\\.([0-9]+))$"
@@ -219,7 +219,7 @@
         }
       },
       "required": [
-        "schemaVersion",
+        "schema_version",
         "date"
       ]
     },
