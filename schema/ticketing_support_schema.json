@@ -179,7 +179,10 @@
           "$ref": "#/definitions/two_bytes"
         },
         "efs": {
-          "$ref": "#/definitions/EF"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EF"
+          }
         }
       },
       "required": [

@@ -1,18 +1,30 @@
 {
-  "$schema": "../../../schema/ticketing_support_schema.json",
-  "technical_data": {
-    "dump_info": {
-      "date": "2022-03-24T11:55:11",
-      "schema_version": "1.0"
+    "$schema": "https://raw.githubusercontent.com/lbureau-billettiqueservices/GT4_support_schema/v0.1.0/schema/ticketing_support_schema.json",
+    "technical_data": {
+        "dump_info": {
+            "date": "2022-03-24T11:55:11Z",
+            "schema_version": "1.0"
+        },
+        "family": "CalypsoPO"
     },
-    "family": "CalypsoPO"
-  },
-  "dump_data": {
-    "containers": [
-      {
-        "fci": "6F24840AA0000004040125092101A516BF0C13C7080000000079CCE8A453070C3E1322150101",
-        "fcp": "85170002000000101000000103000000424242212730002000"
-      }
-    ]
-  }
+    "dump_data": {
+        "containers": [
+            {
+                "fci": "6F24840AA0000004040125092101A516BF0C13C7080000000079CCE8A453070C3E1322150101",
+                "fcp": "85170002000000101000000103000000424242212730002000",
+                "efs": [
+                    {
+                        "FCP": "85170704021D011F1000000001000000000000000000002001",
+                        "records": {
+                            "01": "0000000000000000000000000000000000000000000000000000000000"
+                        }
+                    },
+                    {
+                        "FCP": "8517120401001D1F1000000001000000000000000000002001",
+                        "bin_data": "0000000000000000000000000000000000000000000000000000000000"
+                    }
+                ]
+            }
+        ]
+    }
 }
