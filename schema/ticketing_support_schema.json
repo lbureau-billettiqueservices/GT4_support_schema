@@ -177,6 +177,9 @@
         },
         "lid": {
           "$ref": "#/definitions/two_bytes"
+        },
+        "efs": {
+          "$ref": "#/definitions/EF"
         }
       },
       "required": [
