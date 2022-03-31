@@ -7,8 +7,8 @@
     "technicalData": {
       "type": "object",
       "properties": {
-        "dumpInfo": {
-          "$ref": "#/definitions/dumpInfo"
+        "dump_info": {
+          "$ref": "#/definitions/dump_info"
         },
         "family": {
           "type": "string",
@@ -20,7 +20,7 @@
           "$ref": "#/definitions/communication"
         }
       },
-      "required": ["dumpInfo", "family"]
+      "required": ["dump_info", "family"]
     },
     "data": {
       "type": "object"
@@ -200,7 +200,7 @@
         }
       }
     },
-    "dumpInfo": {
+    "dump_info": {
       "type": "object",
       "properties": {
         "schemaVersion": {

@@ -5,7 +5,7 @@
       "expected": {
         "result": "ok"
       },
-      "schema": "dumpInfo",
+      "schema": "dump_info",
       "input": "dump_information.json"
     }
   ]
