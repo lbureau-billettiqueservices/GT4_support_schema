@@ -22,7 +22,7 @@
       },
       "required": ["dump_info", "family"]
     },
-    "data": {
+    "dump_data": {
       "type": "object"
     }
   },
