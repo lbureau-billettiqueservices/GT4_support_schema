@@ -28,22 +28,16 @@
   },
   "oneOf": [
     {
-      "if": {
-        "properties": {
-          "technical_data": {
-            "properties": {
-              "family": {
-                "const": "CalypsoPO"
-              }
+      "properties": {
+        "technical_data": {
+          "properties": {
+            "family": {
+              "const": "CalypsoPO"
             }
           }
-        }
-      },
-      "then": {
-        "properties": {
-          "dump_data": {
-            "$ref": "#/definitions/CalypsoPO"
-          }
+        },
+        "dump_data": {
+          "$ref": "#/definitions/CalypsoPO"
         }
       }
     }

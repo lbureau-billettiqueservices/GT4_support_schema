@@ -2,7 +2,7 @@
   "$schema": "../../../schema/ticketing_support_schema.json",
   "technical_data": {
     "dump_info": {
-      "date": "2022-03-24T11:55:11.924303+01:0",
+      "date": "2022-03-24T11:55:11",
       "schema_version": "1.0"
     },
     "family": "CalypsoPO"
