@@ -79,7 +79,8 @@
     "EF_bin_data": {
       "type": "object",
       "required": [
-        "FCP"
+        "FCP",
+        "bin_data"
       ],
       "properties": {
         "FCP": {
@@ -96,7 +97,8 @@
     "EF_with_records": {
       "type": "object",
       "required": [
-        "FCP"
+        "FCP",
+        "records"
       ],
       "properties": {
         "records": {
