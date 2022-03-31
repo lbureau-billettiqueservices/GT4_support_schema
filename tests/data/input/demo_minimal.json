@@ -1,6 +1,6 @@
 {
   "$schema": "../../../schema/ticketing_support_schema.json",
-  "technicalData": {
+  "technical_data": {
     "dump_info": {
       "date": "2022-03-24T11:55:11.924303+01:0",
       "schemaVersion": "1.0"

@@ -4,7 +4,7 @@
   "description": "This schema describes the accepted format of ticketing supports dumps defined by the CN03/GT4 group.",
   "type": "object",
   "properties": {
-    "technicalData": {
+    "technical_data": {
       "type": "object",
       "properties": {
         "dump_info": {
@@ -30,7 +30,7 @@
     {
       "if": {
         "properties": {
-          "technicalData": {
+          "technical_data": {
             "properties": {
               "family": {
                 "const": "CalypsoPO"
@@ -260,7 +260,7 @@
     }
   },
   "required": [
-    "technicalData",
+    "technical_data",
     "dump_data"
   ]
 }
