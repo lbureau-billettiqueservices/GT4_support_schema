@@ -2,7 +2,7 @@
   "$schema": "../../../schema/ticketing_support_schema.json",
   "technical_data": {
     "dump_info": {
-      "date": "2022-03-24T11:55:11",
+      "date": "2022-03-24T11:55:11Z",
       "schema_version": "1.0",
       "comments": "this is a comment"
     },
