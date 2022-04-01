@@ -91,3 +91,5 @@ Test files are themselves json files with the current schema:
   }
 }
 ----
+
+You can refer to the readme available in the `tests` directory for more informations.

@@ -1,0 +1,15 @@
+= How to add tests
+
+Tests are data driven and are relatively easy to write. A json-schema for the tests is available in `test_schema.json`.
+
+Each json file in the subdirectory `data` is a json object with a key `tests` that contains a list of test cases.
+
+A test case has three keys:
+
+* `input` is the name of the json file used as input in the test. That file should be in the directory with the same name.
+* `schema` allows to specify which (sub)schema should be used. If empty, it's a test for an entire dump. Else, it can be set to any key in the `definitions` of this repository's schema.
+* `expected` is the expected result of the test. This json object itself contains two keys potentially.
+** `result` which can be set to the value `ok` if the input is validated by the schema, or `failure` if it isn't.
+** `error_message` which is useful if `result` is set to `failure`. This is a portion of the error message sent by the schema validator. This is useful to check for a specific error, and see if the test fails for the right reasons.
+
+Feel free to look at the files in the `data` directory for examples.
