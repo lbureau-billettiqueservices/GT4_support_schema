@@ -79,11 +79,11 @@
     "EF_bin_data": {
       "type": "object",
       "required": [
-        "FCP",
+        "fcp",
         "bin_data"
       ],
       "properties": {
-        "FCP": {
+        "fcp": {
           "$ref": "#/definitions/hex_string"
         },
         "bin_data": {
@@ -97,7 +97,7 @@
     "EF_with_records": {
       "type": "object",
       "required": [
-        "FCP",
+        "fcp",
         "records"
       ],
       "properties": {
@@ -111,7 +111,7 @@
           "minProperties": 1,
           "additionalProperties": false
         },
-        "FCP": {
+        "fcp": {
           "$ref": "#/definitions/hex_string"
         }
       },

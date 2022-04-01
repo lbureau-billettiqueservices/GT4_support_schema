@@ -52,7 +52,7 @@ def pytest_generate_tests(metafunc):
                 {"json_data": dump, "schema": schema, "expected": test["expected"]}
             )
 
-            test_ids.append(test['input'])
+            test_ids.append(f"{f}/{test['input']}")
 
     if "test_context" in metafunc.fixturenames:
         metafunc.parametrize("test_context", test_list, ids=test_ids)
